@@ -30,6 +30,16 @@ function FilmLibrary() {
     }    
   }
 
+  const handleSelectFilm = filmID => {
+    
+    const getFilmByID = TMDB.films.filter((film)=>film.id === filmID)
+        
+    if (getFilmByID.length > 0) {
+      setSelectedFilm(getFilmByID[0])
+    } else {
+      setSelectedFilm(null)
+    }
+  }
   return (
     <div className="FilmLibrary">
       <div className="film-list">
@@ -55,7 +65,7 @@ function FilmLibrary() {
                   imgURL={film.poster_path}
                   title={film.title}
                   year={new Date(film.release_date).getFullYear()}
-                  handleSelectFilm={()=>setSelectedFilm(TMDB.films[index])}
+                  handleSelectFilm={()=>handleSelectFilm(film.id)}
                   handleAddOrRemoveFavFilm={()=>handleAddOrRemoveFavFilm(film.id, index)}
                   isInFavFilms={favFilms.find((favFilm)=> favFilm.id === film.id)}
               />
@@ -66,10 +76,10 @@ function FilmLibrary() {
               imgURL={TMDB.films[favFilm.index].poster_path}
               title={TMDB.films[favFilm.index].title}
               year={new Date(TMDB.films[favFilm.index].release_date).getFullYear()}
-              handleSelectFilm={()=>setSelectedFilm(TMDB.films[index])}
+              handleSelectFilm={()=>handleSelectFilm(favFilm.id)}
               handleAddOrRemoveFavFilm={()=>handleAddOrRemoveFavFilm(TMDB.films[favFilm.index].id, index)}
               isInFavFilms={true}
-            />
+            />          
           )
       
         }

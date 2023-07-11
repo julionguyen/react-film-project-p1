@@ -2,7 +2,7 @@
   display: flex;
   position: relative;
   flex-direction: row;
-  height: 180px;
+/**  height: 180px;  **/
   padding: 0;
   text-align: left;
   margin-bottom: 2px;
@@ -15,6 +15,7 @@
 }
 .FilmRow .btn_select_film img{
   height: 180px;
+  min-width: 120px;
   padding: 0;
 }
 .FilmRow .actions {

@@ -65,6 +65,7 @@ function FilmLibrary() {
                   imgURL={film.poster_path}
                   title={film.title}
                   year={new Date(film.release_date).getFullYear()}
+                  overview={film.overview}
                   handleSelectFilm={()=>handleSelectFilm(film.id)}
                   handleAddOrRemoveFavFilm={()=>handleAddOrRemoveFavFilm(film.id, index)}
                   isInFavFilms={favFilms.find((favFilm)=> favFilm.id === film.id)}
@@ -76,6 +77,7 @@ function FilmLibrary() {
               imgURL={TMDB.films[favFilm.index].poster_path}
               title={TMDB.films[favFilm.index].title}
               year={new Date(TMDB.films[favFilm.index].release_date).getFullYear()}
+              overview={TMDB.films[favFilm.index].overview}
               handleSelectFilm={()=>handleSelectFilm(favFilm.id)}
               handleAddOrRemoveFavFilm={()=>handleAddOrRemoveFavFilm(TMDB.films[favFilm.index].id, index)}
               isInFavFilms={true}

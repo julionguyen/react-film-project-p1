@@ -11,7 +11,6 @@
 }
 .FilmRow .btn_select_film {
   padding: 0;
-  cursor: pointer;
 }
 .FilmRow .btn_select_film img{
   height: 180px;
@@ -41,6 +40,7 @@
 
 .FilmRow .action:hover {
   background-color: lightseagreen;
+  cursor: pointer;
 }
 
 .FilmRow .action:active {

@@ -18,7 +18,8 @@ function FilmDetail({filmDetailEmpty, title, overview, poster_path, backdrop_pat
         </figure>
       <div className="film-meta">
         <p className="film-detail-overview">
-          <img src={posterPathServerURL+poster_path} className="film-detail-poster" alt={'Baby driver poster'} />          
+          <img src={posterPathServerURL+poster_path} className="film-detail-poster" alt={'Baby driver poster'} />       
+          {overview}
         </p>
       </div>
       </div>
